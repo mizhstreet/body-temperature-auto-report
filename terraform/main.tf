@@ -49,6 +49,12 @@ EOF
 
 }
 
+resource "aws_lambda_provisioned_concurrency_config" "default" {
+  function_name                     = aws_lambda_function.default.function_name
+  provisioned_concurrent_executions = 10
+  qualifier                         = aws_lambda_function.default.version
+}
+
 resource "aws_iam_role_policy_attachment" "allow_cloudwatch_log" {
   role       = aws_iam_role.lambda_exec_role.name
   policy_arn = "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
