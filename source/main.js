@@ -12,7 +12,7 @@ exports.handler = async function (event, context, callback) {
 
   try {
     const res = await fetch(
-      `https://docs.google.com/forms/u/1/d/e/1FAIpQLSc8QOUn2JjsCXLnj6wl8DiL4m9WR5ytO_UBBnXQSjzTUJ_pEA/formResponse?&entry.1773284350=201120&entry.1594397693=36.${temperature}&submit=SUBMIT`,
+      `https://docs.google.com/forms/u/1/d/e/1FAIpQLSc8QOUn2JjsCXLnj6wl8DiL4m9WR5ytO_UBBnXQSjzTUJ_pEA/formResponse?&entry.1594397693=36.${temperature}&entry.1773284350=201120&entry.313130556=%E7%89%B9%E3%81%AB%E3%81%AA%E3%81%97&entry.1176899858=%E3%82%A6%E3%83%AC%E3%82%BF%E3%83%B3%E3%83%9E%E3%82%B9%E3%82%AF&submit=SUBMIT`,
       opts
     );
     if (res.status == 200) {
